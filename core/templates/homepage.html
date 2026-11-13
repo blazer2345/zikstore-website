@@ -1,0 +1,440 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <title>ZikStore | UNIZIK Online Marketpalce</title>
+  <style>
+    .container{
+      position: relative;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      line-height: 0;
+    }
+    .container img{
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      margin: 0;
+    }
+    .signup-button{
+      position: absolute;
+      top: 2.7%;
+      padding: 10px 20px;
+      border-radius: 5px;
+      left: 84%;
+      display: flex;
+      align-items: top;
+      white-space: nowrap;
+      background-color: #ff8c32;
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+    .signup-button:hover{
+      cursor: pointer;
+      background: #e8751c;
+    }
+    .login-button{
+      position: absolute;
+      top: 2.7%;
+      padding: 10px 20px;
+      border-radius: 5px;
+      left: 93%;
+      display: flex;
+      align-items: top;
+      white-space: nowrap;
+      background-color: #123b70;
+      color: white;
+      border: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .login-button:hover{
+      cursor: pointer;
+      background: #0b284d;
+    }
+
+    /* WHY SHOP WITH US */
+
+.why-shop {
+    background: #f5f7fc;
+    padding: 40px 25px;
+    margin: 35px 0;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.why-shop h2 {
+    color: #071b49;
+    font-size: 27px;
+    margin-bottom: 35px;
+}
+
+.why-shop h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    background: #f58220;
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+
+.reasons-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.reason {
+    padding: 20px 12px;
+    border-right: 1px solid #dce1ec;
+}
+
+.reason:last-child {
+    border-right: none;
+}
+
+.reason-icon {
+    width: 75px;
+    height: 75px;
+    background: #e5ebf8;
+    border: 2px solid #f58220;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    margin: 0 auto 18px;
+}
+
+.reason h3 {
+    color: #071b49;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.reason p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+    .reasons-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reason:nth-child(2) {
+        border-right: none;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+    .why-shop {
+        padding: 30px 12px;
+    }
+
+    .why-shop h2 {
+        font-size: 21px;
+    }
+
+    .reasons-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .reason {
+        border-right: none;
+        padding: 15px 5px;
+    }
+
+    .reason h3 {
+        font-size: 12px;
+    }
+
+    .reason p {
+        font-size: 12px;
+    }
+
+    .reason-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+}
+
+    /* MAIN FOOTER */
+.main-footer {
+    background: #071b49;
+    color: white;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+}
+
+/* FOOTER CONTAINER */
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+    gap: 40px;
+    padding: 55px 6%;
+}
+
+/* BRAND */
+.footer-brand h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.footer-brand h2 span {
+    color: #f58220;
+}
+
+.footer-brand .tagline {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.footer-brand p {
+    line-height: 1.7;
+    color: #d5dbea;
+}
+
+/* HEADINGS */
+.main-footer h3 {
+    font-size: 19px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.main-footer h3::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 3px;
+    background: #f58220;
+    margin-top: 9px;
+}
+
+/* LINKS */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links a,
+.footer-bottom a {
+    color: #d5dbea;
+    text-decoration: none;
+    margin-bottom: 13px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover,
+.footer-bottom a:hover {
+    color: #f58220;
+    padding-left: 5px;
+}
+
+/* CONTACT */
+.footer-contact p {
+    color: #d5dbea;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+/* SOCIAL LINKS */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: white;
+    background: #102c65;
+    padding: 9px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: #f58220;
+}
+
+/* BOTTOM FOOTER */
+.footer-bottom {
+    border-top: 1px solid #405174;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-bottom p {
+    color: #d5dbea;
+    margin: 0;
+}
+
+.footer-bottom div {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-bottom a {
+    margin: 0;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        padding: 35px 7%;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-bottom div {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+  </style>
+</head>
+<body>
+ <div class="container">
+   <img src="{% static 'images/ZikStore_homepage.png' %}" alt="" width="100%" height="100%">
+   <a href="{% url 'signup' %}" target="_blank"><button class="signup-button">Sign Up</button></a>
+   <a href="{% url 'login' %}" target="_blank"><button class="login-button">Log-in</button></a>
+ </div>
+
+ <!-- WHY SHOP WITH US -->
+<section class="why-shop">
+
+    <h2>4 Great Reasons to Shop With Us</h2>
+
+    <div class="reasons-container">
+
+        <div class="reason">
+            <div class="reason-icon">🛡️</div>
+            <h3>SECURE CHECKOUT</h3>
+            <p>Your payment information is protected with secure payment processing.</p>
+        </div>
+
+        <div class="reason">
+            <div class="reason-icon">📅</div>
+            <h3>30-DAY SUPPORT</h3>
+            <p>Not satisfied? Contact us within 30 days for assistance.</p>
+        </div>
+
+        <div class="reason">
+            <div class="reason-icon">🚚</div>
+            <h3>TRACKED DELIVERY</h3>
+            <p>Track your order and know where your package is.</p>
+        </div>
+
+        <div class="reason">
+            <div class="reason-icon">📦</div>
+            <h3>CAREFULLY PACKED</h3>
+            <p>Every order is carefully packed to ensure safe delivery.</p>
+        </div>
+
+    </div>
+
+</section>
+
+ <footer class="main-footer">
+
+    <div class="footer-container">
+
+        <!-- Brand Section -->
+        <div class="footer-brand">
+            <h2>UNIZIK <span>STORE</span></h2>
+            <p class="tagline">Shop Smart. Study Better.</p>
+
+            <p>
+                Your one-stop shopping destination
+                for quality products and school essentials.
+            </p>
+
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">X</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <a href="/">Home</a>
+            <a href="/stores/products/">Shop</a>
+            <a href="#">About Us</a>
+            <a href="#">FAQs</a>
+            <a href="#">Contact Us</a>
+        </div>
+
+
+        <!-- Categories -->
+        <div class="footer-links">
+            <h3>Categories</h3>
+            <a href="#">Textbooks</a>
+            <a href="#">Laptops & Accessories</a>
+            <a href="#">Stationery</a>
+            <a href="#">School Uniforms</a>
+            <a href="#">Phone Accessories</a>
+        </div>
+
+
+        <!-- Contact Section -->
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+
+            <p>📍 Nnamdi Azikiwe University, Awka</p>
+            <p>📞 +234 09044411679</p>
+            <p>✉️ support@yourwebsite.com</p>
+        </div>
+
+    </div>
+
+
+    <!-- Bottom Footer -->
+    <div class="footer-bottom">
+        <p>© 2026 UNIZIK Store. All rights reserved.</p>
+
+        <div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+
+</footer>
+</body>
+</html>
